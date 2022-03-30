@@ -16,7 +16,7 @@ This is kind of a dialog. This includes Lottie animations in two differnt size.
 ## Installation
 
 Install my-project with https://jitpack.io/ 
-<img alt="JitPack" src="https://img.shields.io/jitpack/v/github/Mori-hub/Lottie-Dialogs">
+
 
 ```bash
   dependencies {
