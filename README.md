@@ -23,7 +23,10 @@ Install my-project with https://jitpack.io/
 	        implementation 'com.github.Mori-hub:Lottie-Dialogs::1.0.0'
 	}
 ```
-    
+## Version 
+
+<img alt="JitPack" src="https://img.shields.io/jitpack/v/github/Mori-hub/Lottie-Dialogs">
+
 ## Usage
 
 ```javascript
@@ -126,6 +129,7 @@ Apply Black Theme
 
 ## Gifs
 
+<img src="https://user-images.githubusercontent.com/53067774/160893850-2ae73874-8264-4773-9f72-7327b4664d81.gif" width="15%"></img> <img src="https://user-images.githubusercontent.com/53067774/160893931-d09309d7-6d5a-4a43-afe8-5d1287e95a87.gif" width="15%"></img> <img src="https://user-images.githubusercontent.com/53067774/160894022-3e3dcdcf-87ef-4268-9ffb-51d03287d221.gif" width="15%"></img> <img src="https://user-images.githubusercontent.com/53067774/160894172-b8b7ec27-a062-48ea-abb9-8e4ea564d69f.gif" width="15%"></img> 
 
 ## 🚀 About Me
 I'm a full stack developer...find me in google play store
@@ -146,6 +150,7 @@ Java, Kotlin, CSS....
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/Mori-hub)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
+[![Google](https://img.shields.io/badge/My%20Apps-Google%20Play%20Store-green?style=for-the-badge&logo=googleplay)](https://play.google.com/store/search?q=pub:Smart%20rabit&c=apps)
 
 
 ## Feedback
