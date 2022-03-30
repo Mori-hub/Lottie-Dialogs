@@ -98,27 +98,20 @@ Install my-project with https://jitpack.io/
 
 ```javascript
     // You set theme for all dialoges 
-     lottieHeader.sample(
-                "file.json",
-                "#DFD3C3", "This is a sample you can generate as you want",
-                "Got it", "Not Sure", "Help me ",
-                "green", "red", "yellow", "black",
-                { Toast.makeText(this, "Got", Toast.LENGTH_SHORT).show() },
-                { Toast.makeText(this, "Not", Toast.LENGTH_SHORT).show() },
-                { Toast.makeText(this, "Help me", Toast.LENGTH_SHORT).show() }
-            )
+    lottieHeader.dialogTheme(
+            false,
+            "black",
+            "gray", "white",
+            "#9B0000", "yellow"
+        )
 ```
 ## Screenshots
 
 
-| col 1      | col 2      |
-|------------|-------------|
-| <img src="" width="250"> | <img src="" width="250"> |
+
 
 ## Gifs
-![see](https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5eeea355389655.59822ff824b72.gif)
 
-<img src="./assets/image.gif" width="50%" height="50%"/>
 
 ## 🚀 About Me
 I'm a full stack developer...
