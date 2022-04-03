@@ -20,7 +20,7 @@ Install my-project with https://jitpack.io/
 
 ```bash
   dependencies {
-	        implementation 'com.github.Mori-hub:Lottie-Dialogs::1.0.0'
+	          implementation 'com.github.Mori-hub:Lottie-Dialogs:1.0.0'
 	}
 ```
 ## Version 
