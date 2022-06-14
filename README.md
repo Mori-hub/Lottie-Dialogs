@@ -1,7 +1,7 @@
 
 # Lottie Dialoges
 
-This is kind of a dialog. This includes Lottie animations in two differnt size.
+This is kind of a dialog. This includes Lottie animations in two  different sizes.
 ## Features
 
 - lottie animation
