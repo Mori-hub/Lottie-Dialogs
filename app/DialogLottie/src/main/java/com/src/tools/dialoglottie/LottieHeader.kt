@@ -9,16 +9,17 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.view.Window
-import android.view.WindowManager
 import android.view.animation.AnimationUtils
-import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieAnimationView
+import java.util.*
+import kotlin.system.exitProcess
 
 @SuppressLint("SetTextI18n")
 
@@ -42,7 +43,7 @@ class LottieHeader(private val context: Context, smallOrLarge: String) {
     init {
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
+        // dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setCancelable(false)
         if (smallOrLarge == "large") {
@@ -81,6 +82,7 @@ class LottieHeader(private val context: Context, smallOrLarge: String) {
         userGiven.add(buttonsColor)
         userGiven.add(buttonTextColor)
         applyTheme()
+
     }
 
     private fun applyTheme() {
@@ -225,9 +227,13 @@ class LottieHeader(private val context: Context, smallOrLarge: String) {
         titleOfNegativeButton?.let { dialogNegativeButton.text = it } ?: dialogNegativeButton.text
         fPos.visibility = View.VISIBLE
         dialogPositiveButton.setOnClickListener {
-            positiveButtonFunction?.invoke()
-            activity.finish()
-            delay(dialogPositiveButton) { dialog.dismiss() }
+            Thread.setDefaultUncaughtExceptionHandler(DefaultExceptionHandler(activity));
+            dialog.dismiss()
+            if (positiveButtonFunction != null)
+                positiveButtonFunction.invoke()
+            else activity.finish()
+
+            // delay(dialogPositiveButton) { dialog.dismiss() }
             clean()
         }
         fNeg.visibility = View.VISIBLE
@@ -438,5 +444,15 @@ class LottieHeader(private val context: Context, smallOrLarge: String) {
             if (fMid.isVisible) fMid.visibility = View.INVISIBLE
         }, 600)
 
+    }
+
+    class DefaultExceptionHandler(var activity: Activity) : Thread.UncaughtExceptionHandler {
+        override fun uncaughtException(thread: Thread, ex: Throwable) {
+            Log.d("ERROR Dialog Lottie", "---------" + ex.message)
+            Log.d("ERROR Dialog Lottie", "--------" + ex.cause)
+            Log.d("ERROR Dialog Lottie", "--------" + Arrays.toString(ex.stackTrace))
+            activity.finish()
+            exitProcess(0)
+        }
     }
 }

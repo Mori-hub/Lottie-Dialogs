@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Call Lib
-        val lottieHeader = LottieHeader(this, "small")
+        val lottieHeader = LottieHeader(this, "large")
 
         // If you need create your Theme!
         lottieHeader.dialogTheme(
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.button2).setOnClickListener {
             lottieHeader.exit(
                 "Goodbye, \n Do you want Exit now?",
-                null, null, null, this
+                null, null, {finishAffinity()}, this
             )
         }
         // Rate Dialog
