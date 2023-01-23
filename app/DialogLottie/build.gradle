@@ -25,9 +25,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-//    kotlinOptions {
-//        jvmTarget = '1.8'
-//    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
     namespace 'com.src.tools.dialoglottie'
 }
 
@@ -51,7 +51,11 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.Mori-hub'
                 artifactId = 'Lottie-Dialogs'
-                version = '1.0.2'
+                version = '1.0.3'
+                pom {
+                    description = 'A description of my library'
+
+                }
             }
         }
     }
