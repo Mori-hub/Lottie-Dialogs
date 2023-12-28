@@ -51,7 +51,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.Mori-hub'
                 artifactId = 'Lottie-Dialogs'
-                version = '1.0.4'
+                version = '1.0.5'
                 pom {
                     description = 'A description of my library'
 

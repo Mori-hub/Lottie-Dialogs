@@ -18,7 +18,6 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.view.isVisible
 import com.airbnb.lottie.LottieAnimationView
-import java.util.*
 import kotlin.system.exitProcess
 
 @SuppressLint("SetTextI18n")
@@ -53,7 +52,7 @@ class LottieHeader(private val context: Context, smallOrLarge: String) {
             dialog.setContentView(R.layout.dialog_small)
         dialogHeaderImage =
             dialog.findViewById(R.id.lottieHeader) //MUSt Chang to Lottie
-        dialogDescription = dialog.findViewById(R.id.description) as TextView
+        dialogDescription = dialog.findViewById(R.id.description)!!
         dialogPositiveButton = dialog.findViewById(R.id.positiveButton)
         dialogNegativeButton = dialog.findViewById(R.id.negativeButton)
         dialogMiddleButton = dialog.findViewById(R.id.middleButton)
@@ -227,7 +226,7 @@ class LottieHeader(private val context: Context, smallOrLarge: String) {
         titleOfNegativeButton?.let { dialogNegativeButton.text = it } ?: dialogNegativeButton.text
         fPos.visibility = View.VISIBLE
         dialogPositiveButton.setOnClickListener {
-            Thread.setDefaultUncaughtExceptionHandler(DefaultExceptionHandler(activity));
+            Thread.setDefaultUncaughtExceptionHandler(DefaultExceptionHandler(activity))
             dialog.dismiss()
             if (positiveButtonFunction != null)
                 positiveButtonFunction.invoke()
@@ -446,11 +445,11 @@ class LottieHeader(private val context: Context, smallOrLarge: String) {
 
     }
 
-    class DefaultExceptionHandler(var activity: Activity) : Thread.UncaughtExceptionHandler {
+    class DefaultExceptionHandler(private var activity: Activity) : Thread.UncaughtExceptionHandler {
         override fun uncaughtException(thread: Thread, ex: Throwable) {
             Log.d("ERROR Dialog Lottie", "---------" + ex.message)
             Log.d("ERROR Dialog Lottie", "--------" + ex.cause)
-            Log.d("ERROR Dialog Lottie", "--------" + Arrays.toString(ex.stackTrace))
+            Log.d("ERROR Dialog Lottie", "--------" + ex.stackTrace.contentToString())
             activity.finish()
             exitProcess(0)
         }
