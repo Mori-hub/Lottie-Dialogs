@@ -26,20 +26,20 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
     namespace 'com.src.tools.dialoglottie'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.0'
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.core:core-ktx:1.10.1' //(sdk 34)
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.7.0' //(sdk 34)
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    implementation "com.airbnb.android:lottie:5.2.0"
+    implementation 'com.airbnb.android:lottie:6.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
 }
@@ -51,7 +51,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.Mori-hub'
                 artifactId = 'Lottie-Dialogs'
-                version = '1.0.5'
+                version = '1.0.6'
                 pom {
                     description = 'A description of my library'
 
